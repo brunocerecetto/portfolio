@@ -1,3 +1,22 @@
-#particles-js {
-    background-color: #b61924
+.title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
+
+.title.text {
+    font-size: 32pt;
+    line-height: 36pt;
+    color: white;
+    font-family: 'Roboto';
+    // font-weight: 200;
+
+    .highlight {
+        color:#039BE5;
+        font-family: 'Roboto';
+        // font-weight: 500 !important;
+    }
+}
+

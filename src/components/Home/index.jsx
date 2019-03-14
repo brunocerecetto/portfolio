@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ParticulesComponent from './../ParticulesComponent';
+import './index.scss';
 
 class HomeComponent extends Component {
     render() {
@@ -11,7 +12,7 @@ class HomeComponent extends Component {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    background: "#b61924"
+                    background: "#263238"
                 }}>
                 <ParticulesComponent />
                 <div
@@ -23,7 +24,7 @@ class HomeComponent extends Component {
                         height: "100%"
                     }}
                 >
-                    <div class="text"> Hello, I'm <span class="highlight">Bruno Cerecetto</span>.<br></br>
+                    <div className="title text"> Hello, I'm <span className="highlight">Bruno Cerecetto</span>.<br></br>
                         I'm a full-stack web developer.</div>
                 </div>
             </div>
