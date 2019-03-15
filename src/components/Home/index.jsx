@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ParticulesComponent from './../ParticulesComponent';
+import TextLoop from "react-text-loop";
 import './index.scss';
 
 class HomeComponent extends Component {
@@ -24,8 +25,11 @@ class HomeComponent extends Component {
                         height: "100%"
                     }}
                 >
-                    <div className="title text"> Hello, I'm <span className="highlight">Bruno Cerecetto</span>.<br></br>
-                        I'm a full-stack web developer.</div>
+                    <div className="title text"> 
+                        <TextLoop children={["Hello , I'm", "Hola, Soy ", "Oi, Sou ", "你好，我是"]} />
+                        <span className="highlight"> Bruno Cerecetto</span>.<br></br>
+                        <TextLoop children={["I'm a full-stack web developer.", "Soy desarrollador web Full Stack.", "Eu sou um full-stack web developer.", "我是一個全棧Web開發人員"]} />
+                    </div>
                 </div>
             </div>
         );
