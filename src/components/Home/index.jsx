@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import ParticulesComponent from './../ParticulesComponent';
-import TextLoop from "react-text-loop";
+import TextLoop from 'react-text-loop';
 import './index.scss';
 
 class HomeComponent extends Component {
     render() {
+        const width = window.window.innerWidth;
+        const height = window.window.innerHeight;
+        
         return (
             <div
                 style={{
@@ -15,7 +18,7 @@ class HomeComponent extends Component {
                     height: "100%",
                     background: "#263238"
                 }}>
-                <ParticulesComponent />
+                <ParticulesComponent height={height} width={width}/>
                 <div
                     style={{
                         position: "absolute",
