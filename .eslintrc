@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "extends": ["airbnb", "plugin:jsx-a11y/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/jsx-no-undef": "off",
+    "no-console": "off"
+  },
+  "plugins": ["react", "jsx-a11y", "import"]
+}
