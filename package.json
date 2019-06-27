@@ -8,6 +8,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-ga": "^2.6.0",
     "react-particles-js": "^2.4.2",
     "react-scripts": "2.1.8",
     "react-text-loop": "^2.0.1"
@@ -17,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint --ext .jsx,.js src"
+    "lint": "npx eslint --ext .jsx,.js src",
+    "deploy": "npm run build && aws s3 sync build/ s3://soybruno.com"
   },
   "husky": {
     "hooks": {

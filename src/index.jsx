@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import ReactGA from 'react-ga';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+ReactGA.initialize('UA-142839230-1');
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
