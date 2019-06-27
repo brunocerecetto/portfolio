@@ -1,18 +1,11 @@
-import { React, useEffect } from 'react';
-import ReactGA from 'react-ga';
+import React from 'react';
 import HomeComponent from './components/Home';
 import './App.scss';
 
-const App = () => {
-  useEffect(() => {
-    ReactGA.pageview('/app');
-  }, []);
-
-  return (
-    <div className="App">
-      <HomeComponent />
-    </div>
-  );
-};
+const App = () => (
+  <div className="App">
+    <HomeComponent />
+  </div>
+);
 
 export default App;
