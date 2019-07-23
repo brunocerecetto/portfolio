@@ -1,50 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 .title {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .title.text {
-    font-size: 32pt;
-    line-height: 36pt;
-    color: white;
-    font-family: 'Roboto';
+  font-size: 32pt;
+  line-height: 36pt;
+  color: white;
+  font-family: 'Raleway', sans-serif;
 
-    .highlight {
-        color:#039BE5;
-        font-family: 'Roboto';
-    }
+  .highlight {
+    color: #ff6f00;
+    font-family: 'Raleway-semibold', sans-serif;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-    .title.text {
-        font-size: 14pt !important;
-        line-height: 16pt !important;
-    }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .title.text {
+    font-size: 14pt !important;
+    line-height: 16pt !important;
+  }
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 }

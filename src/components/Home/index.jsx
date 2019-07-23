@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable react/no-children-prop */
 import React from 'react';
 import TextLoop from 'react-text-loop';
@@ -18,7 +19,7 @@ const HomeComponent = () => {
         left: 0,
         width: '100%',
         height: '100%',
-        background: '#263238',
+        background: '#014972',
       }}
     >
       <ParticulesComponent height={height} width={width} />
@@ -31,17 +32,17 @@ const HomeComponent = () => {
           height: '100%',
         }}
       >
-        <div className="title text">
-          <TextLoop children={["Hello , I'm", 'Hola, Soy ', 'Oi, Sou ', '你好，我是']} />
-          <span className="highlight"> Bruno Cerecetto</span>
+        <div className="title text unselectable">
+          <TextLoop className="unselectable" children={["Hello , I'm", 'Hola, Soy ', 'Oi, Sou ']} />
+          <span className="highlight unselectable"> Bruno Cerecetto</span>
           .
           <br />
           <TextLoop
+            className="unselectable"
             children={[
               "I'm a full-stack web developer.",
               'Soy desarrollador web Full Stack.',
               'Eu sou um full-stack web developer.',
-              '我是一個全棧Web開發人員',
             ]}
           />
         </div>
