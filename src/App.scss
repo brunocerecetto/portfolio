@@ -4,6 +4,11 @@ html,
 body {
   height: 100%;
   margin: 0;
+}
+
+.flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

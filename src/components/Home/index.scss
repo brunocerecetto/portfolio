@@ -1,37 +1,32 @@
-.background {
+.home {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh + 53px);
   background: #014972;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .title.text {
+    font-size: 32pt;
+    line-height: 36pt;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
 
-.title.text {
-  font-size: 32pt;
-  line-height: 36pt;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
+    .highlight {
+      color: #ff6f00;
+      font-family: 'Raleway-semibold', sans-serif;
+    }
 
-  .highlight {
-    color: #ff6f00;
-    font-family: 'Raleway-semibold', sans-serif;
+    span {
+      font-weight: bold;
+    }
   }
 
-  span {
-    font-weight: bold;
+  .unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
   }
-}
-
-.unselectable {
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
 }
 
 /* ----------- iPhone X ----------- */
