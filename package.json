@@ -20,7 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint --ext .jsx,.js src",
-    "deploy": "npm run build && aws s3 sync build/ s3://soybruno.com"
+    "clean-bucket": "aws s3 rm s3://soybruno.com --recursive",
+    "sync-bucket": "aws s3 sync build/ s3://soybruno.com",
+    "deploy": "npm run build && npm run clean-bucket && npm run sync-bucket"
   },
   "husky": {
     "hooks": {
