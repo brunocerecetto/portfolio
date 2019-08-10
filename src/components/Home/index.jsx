@@ -10,7 +10,7 @@ const HomeComponent = () => {
   const height = window.window.innerHeight;
 
   return (
-    <div className="background">
+    <div className="home flex">
       <ParticulesComponent height={height} width={width} />
       <div className="title text unselectable">
         <TextLoop className="unselectable" children={["Hello , I'm", 'Hola, Soy ', 'Oi, Sou ']} />
