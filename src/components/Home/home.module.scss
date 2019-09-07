@@ -1,10 +1,20 @@
 .home {
   position: absolute;
   width: 100%;
-  height: calc(100vh + 53px);
+  height: 100vh;
   background: #014972;
   display: flex;
-  .title.text {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // unselectable
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+
+  .title {
     font-size: 32pt;
     line-height: 36pt;
     color: white;
@@ -19,13 +29,6 @@
     span {
       font-weight: bold;
     }
-  }
-
-  .unselectable {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
   }
 }
 
