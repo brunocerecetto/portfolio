@@ -1,8 +1,9 @@
+@import './../../colors.scss';
+
 .home {
-  position: absolute;
   width: 100%;
   height: 100vh;
-  background: #014972;
+  background: $background;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,15 +16,14 @@
   user-select: none;
 
   .title {
-    font-size: 32pt;
-    line-height: 36pt;
+    font-size: 14pt; // font-size: 32pt;
+    line-height: 16pt; // line-height: 36pt;
     color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
 
     .highlight {
-      color: #ff6f00;
-      font-family: 'Raleway-semibold', sans-serif;
+      color: $secondary;
     }
 
     span {

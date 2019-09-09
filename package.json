@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "https://soybruno.com",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "jquery": "^3.4.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
