@@ -32,24 +32,20 @@
   }
 }
 
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-  .title.text {
-    font-size: 14pt !important;
-    line-height: 16pt !important;
+@media all and (min-width: 600px) {
+  .home {
+    .title {
+      font-size: 24pt;
+      line-height: 26pt;
+    }
   }
 }
 
-/* Portrait */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
-  .title.text {
-    font-size: 14pt !important;
-    line-height: 16pt !important;
+@media all and (min-width: 900px) {
+  .home {
+    .title {
+      font-size: 32pt;
+      line-height: 36pt;
+    }
   }
-}
-
-/* Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 }
