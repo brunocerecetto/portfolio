@@ -6,8 +6,6 @@ const home = '#';
 
 function NavbarComponent() {
   const [opened, openMenu] = useState(false);
-  // fa-bars
-  // 'fa-times'
 
   return (
     <div className={styles.navbarContainer}>
@@ -19,7 +17,7 @@ function NavbarComponent() {
           <a href={home}>About</a>
         </li>
         <li className={`${styles.item} ${opened ? styles.active : ''}`}>
-          <a href={home}>Projects</a>
+          <a href={home}>Works</a>
         </li>
         <li className={`${styles.item} ${opened ? styles.active : ''}`}>
           <a href={home}>Contact</a>
