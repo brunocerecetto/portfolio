@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 const ParticulesComponent = () => (
   <div className="w-full h-full absolute">
     <Particles
-      className="w-screen h-screen"
+      className="h-screen"
       params={{
         particles: {
           number: {
