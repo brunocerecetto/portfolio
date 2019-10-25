@@ -11,17 +11,17 @@ function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-linkedin md:fa-2x hover:text-orange-600" />
+              <i className="fab fa-linkedin md:fa-2x hover:text-highlight" />
             </a>
           </li>
           <li className="m-2 text-base">
             <a href="https://twitter.com/brunocerecetto" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter md:fa-2x hover:text-orange-600" />
+              <i className="fab fa-twitter md:fa-2x hover:text-highlight" />
             </a>
           </li>
           <li className="m-2 text-base">
             <a href="https://github.com/brunocerecetto" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-github md:fa-2x hover:text-orange-600" />
+              <i className="fab fa-github md:fa-2x hover:text-highlight" />
             </a>
           </li>
           <li className="m-2 text-base">
@@ -30,7 +30,7 @@ function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-stack-overflow md:fa-2x hover:text-orange-600" />
+              <i className="fab fa-stack-overflow md:fa-2x hover:text-highlight" />
             </a>
           </li>
         </ul>
