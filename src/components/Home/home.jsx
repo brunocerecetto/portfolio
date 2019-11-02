@@ -9,7 +9,7 @@ const HomeComponent = () => (
     <ParticulesComponent />
     <div className="text-white text-base md:text-xl lg:text-4xl leading-none md:leading-normal lg:leading-relaxed text-center">
       <TextLoop children={["Hello , I'm", 'Hola, Soy ', 'Oi, Sou ']} />
-      <span className="text-highlight font-bold"> Bruno Cerecetto</span>
+      <span className="text-highlight font-raleway-semibold font-bold"> Bruno Cerecetto</span>
         .
       <br />
       <TextLoop

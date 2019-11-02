@@ -12,6 +12,9 @@ module.exports = {
       order: {
         0: '0',
       },
+      fontFamily: {
+        'raleway-semibold': 'Raleway-semibold, sans-serif',
+      },
     },
   },
   variants: {},
