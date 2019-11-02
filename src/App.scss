@@ -31,15 +31,3 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
-
-.App {
-  display: flex;
-  flex-direction: column;
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-}

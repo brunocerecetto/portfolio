@@ -3,9 +3,11 @@
 import React from 'react';
 import TextLoop from 'react-text-loop';
 import ParticulesComponent from '../particulesComponent';
+import styles from './home.module.scss';
 
 const HomeComponent = () => (
-  <div className="w-full h-screen bg-background flex flex-col justify-center items-center select-none">
+  <div className="w-full h-screen bg-background flex flex-col justify-between items-center">
+    <div />
     <ParticulesComponent />
     <div className="text-white text-base md:text-xl lg:text-4xl leading-none md:leading-normal lg:leading-relaxed text-center">
       <TextLoop children={["Hello , I'm", 'Hola, Soy ', 'Oi, Sou ']} />
@@ -19,6 +21,12 @@ const HomeComponent = () => (
           'Eu sou um full-stack web developer.',
         ]}
       />
+    </div>
+    <div className="mb-4 z-50">
+      <button type="button" className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`} onClick={() => { alert('funciona'); }}>
+        <span>Find out more!</span>
+        <i className="fas fa-chevron-down" />
+      </button>
     </div>
   </div>
 );
