@@ -5,7 +5,7 @@ import TextLoop from 'react-text-loop';
 import ParticulesComponent from '../particulesComponent';
 import styles from './home.module.scss';
 
-const HomeComponent = () => (
+const HomeComponent = props => (
   <div className="w-full h-screen bg-background flex flex-col justify-between items-center">
     <div />
     <ParticulesComponent />
@@ -23,7 +23,7 @@ const HomeComponent = () => (
       />
     </div>
     <div className="mb-4 z-50">
-      <button type="button" className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`} onClick={() => { alert('funciona'); }}>
+      <button type="button" className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`} onClick={() => { props.scrollTo(); }}>
         <span>Find out more!</span>
         <i className="fas fa-chevron-down" />
       </button>
