@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable react/no-children-prop */
 import React from 'react';
 import TextLoop from 'react-text-loop';
-import ParticulesComponent from '../particulesComponent';
+import ParticulesComponent from './particulesComponent';
 import styles from './home.module.scss';
 
 const HomeComponent = props => (
