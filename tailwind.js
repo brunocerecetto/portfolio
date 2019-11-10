@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         'raleway-semibold': 'Raleway-semibold, sans-serif',
       },
+      borderRadius: {
+        inherit: 'inherit',
+      },
     },
   },
   variants: {},
