@@ -2,7 +2,7 @@ import React from 'react';
 import me from '../../assets/images/me.jpg';
 import Badge from './badges';
 import Header from '../header/header';
-import ProgressBar from './progress-bar/progress-bar';
+import ProgressBar from './progress-bar';
 
 
 const AboutMeComponent = () => (
@@ -38,15 +38,15 @@ const AboutMeComponent = () => (
         </div>
         <h2 className="text-2xl font-black my-5">Skills:</h2>
         <div className="flex flex-col items-center w-full mb-20">
-          <ProgressBar skill="html" percentage="80" width="2/12" />
-          <ProgressBar skill="angular" percentage="80" width="2/12" />
-          <ProgressBar skill="javascript" percentage="75" width="1/4" />
-          <ProgressBar skill=".net" percentage="75" width="1/4" />
-          <ProgressBar skill="sql" percentage="60" width="2/5" />
-          <ProgressBar skill="css" percentage="50" width="1/2" />
-          <ProgressBar skill="react" percentage="40" width="3/5" />
-          <ProgressBar skill="node.js" percentage="40" width="3/5" />
-          <ProgressBar skill="docker" percentage="25" width="9/12" />
+          <ProgressBar skill="html" width="1/12" />
+          <ProgressBar skill="angular" width="1/12" />
+          <ProgressBar skill="javascript" width="2/12" />
+          <ProgressBar skill=".net" width="1/4" />
+          <ProgressBar skill="css" width="1/4" />
+          <ProgressBar skill="sql" width="2/5" />
+          <ProgressBar skill="react" width="2/5" />
+          <ProgressBar skill="node.js" width="2/5" />
+          <ProgressBar skill="docker" width="8/12" />
         </div>
       </div>
     </div>
