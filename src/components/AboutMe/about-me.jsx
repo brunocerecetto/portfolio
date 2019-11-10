@@ -2,6 +2,7 @@ import React from 'react';
 import me from '../../assets/images/me.jpg';
 import Badge from './badges';
 import Header from '../header/header';
+import ProgressBar from './progress-bar/progress-bar';
 
 
 const AboutMeComponent = () => (
@@ -9,7 +10,7 @@ const AboutMeComponent = () => (
 
     <Header text="about" />
 
-    <div className="md:mx-16 xl:mx-40 flex flex-col lg:flex-row md:justify-between">
+    <div className="md:mx-16 xl:mx-56 flex flex-col lg:flex-row md:justify-between">
       <div className="flex flex-col justify-center items-center">
         <img className="rounded-full max-w-xs mb-8" src={me} alt="" />
         <h2 className="text-2xl font-black mb-5">Who&apos;s this guy?</h2>
@@ -28,15 +29,24 @@ const AboutMeComponent = () => (
         </span>
       </div>
       <div className="flex flex-col items-center mt-5 lg:mt-0">
-        <h2 className="text-2xl font-black mb-5">Technologies I enjoy</h2>
+        <h2 className="text-2xl font-black mb-5">Technologies I enjoy:</h2>
         <div className="flex flex-row justify-between">
           <Badge text="Javascript" icon="fab fa-js-square" />
           <Badge text="Angular" icon="fab fa-angular" />
           <Badge text="React" icon="fab fa-react" />
           <Badge text="Node JS" icon="fab fa-node-js" />
         </div>
-        <div className="flex flex-col items-center">
-          aca van los skills
+        <h2 className="text-2xl font-black my-5">Skills:</h2>
+        <div className="flex flex-col items-center w-full mb-20">
+          <ProgressBar skill="html" percentage="80" width="2/12" />
+          <ProgressBar skill="angular" percentage="80" width="2/12" />
+          <ProgressBar skill="javascript" percentage="75" width="1/4" />
+          <ProgressBar skill=".net" percentage="75" width="1/4" />
+          <ProgressBar skill="sql" percentage="60" width="2/5" />
+          <ProgressBar skill="css" percentage="50" width="1/2" />
+          <ProgressBar skill="react" percentage="40" width="3/5" />
+          <ProgressBar skill="node.js" percentage="40" width="3/5" />
+          <ProgressBar skill="docker" percentage="25" width="9/12" />
         </div>
       </div>
     </div>

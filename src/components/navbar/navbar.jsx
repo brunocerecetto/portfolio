@@ -8,7 +8,7 @@ function NavbarComponent() {
 
   return (
 
-    <nav className="bg-background sticky top-0 pb-3 text-lg md:text-2xl md:flex md:items-center border-b-4 border-highlight">
+    <nav className="bg-background sticky top-0 pb-3 text-lg md:text-2xl md:flex md:items-center border-b-4 border-highlight z-50">
       <button className="text-white absolute right-0 mr-2 md:hidden" onClick={() => openMenu(!opened)} type="button">
         <i className={`fas ${opened ? 'fa-times' : 'fa-bars'}`} />
       </button>
