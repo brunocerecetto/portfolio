@@ -15,7 +15,9 @@
   },
   "rules": {
     "react/jsx-no-undef": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/no-children-prop": 0
   },
   "plugins": ["react", "jsx-a11y", "import"]
 }

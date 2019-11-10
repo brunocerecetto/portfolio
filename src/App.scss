@@ -4,11 +4,30 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
-.flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ul {
+  list-style-type: none;
+  padding: 0 0 0 0;
+}
+a {
+  text-decoration: none;
+}
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  /* show a hand cursor on hover; some argue that we
+  should keep the default arrow cursor for buttons */
+}
+
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
 }

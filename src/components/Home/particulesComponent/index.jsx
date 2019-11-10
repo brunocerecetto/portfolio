@@ -1,19 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Particles from 'react-particles-js';
-import './index.scss';
 
-const ParticulesComponent = ({ height, width }) => (
-  <div
-    style={{
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-    }}
-  >
+const ParticulesComponent = () => (
+  <div className="w-full h-full absolute">
     <Particles
-      height={height - 20}
-      width={width}
+      className="h-screen"
       params={{
         particles: {
           number: {
@@ -122,10 +113,5 @@ const ParticulesComponent = ({ height, width }) => (
     />
   </div>
 );
-
-ParticulesComponent.propTypes = {
-  height: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
-};
 
 export default ParticulesComponent;
