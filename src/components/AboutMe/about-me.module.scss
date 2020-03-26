@@ -1,39 +1,84 @@
-$hexagon-size: 300px;
+@import '../../colors.scss';
+@mixin margin-auto {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
 
-.hexagon {
-  $hexagon-color-1: #00ffb8;
-  $hexagon-color-2: #13ce9a;
-
-  width: ($hexagon-size * 0.645);
-  height: $hexagon-size;
-  background-image: linear-gradient(90deg, $hexagon-color-1, $hexagon-color-2);
-  border-radius: ($hexagon-size / 10);
-  transition: transform 400ms ease;
-
-  &:hover {
-    transform: flip(30deg);
-  }
-
+.badge {
+  position: relative;
+  margin: 0.5em 7.2em;
+  width: 12em;
+  height: 18.3em;
+  border-radius: 30px;
+  display: inline-block;
+  top: 0;
+  transition: all 0.2s ease;
+  background: linear-gradient(to bottom right, #7eb8ee 0%, $highlight 100%);
+  color: $highlight;
   &:before,
   &:after {
-    content: '';
-    display: block;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: inherit;
     height: inherit;
-    background-image: inherit;
     border-radius: inherit;
+    background: inherit;
+    content: '';
+    @include margin-auto;
   }
-
   &:before {
     transform: rotate(60deg);
   }
-
   &:after {
     transform: rotate(-60deg);
   }
+  &:hover {
+    top: -8px;
+  }
+  .circle {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    background: #fff;
+    z-index: 10;
+    border-radius: 50%;
+    @include margin-auto;
+    left: -18px;
+    i {
+      font-size: 1.5em;
+      margin-top: 6px;
+    }
+  }
+  .font {
+    display: inline-block;
+    margin-top: 0.75em;
+  }
+  .ribbon {
+    position: absolute;
+    border-radius: 4px;
+    padding: 3.75px 3.75px 3px;
+    width: 12em;
+    z-index: 11;
+    color: #fff;
+    bottom: 0px;
+    // left: 25%;
+    margin-left: -30px;
+    height: 30px;
+    font-size: 1.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    background: linear-gradient(to bottom right, #555 0%, #333 100%);
+    box-sizing: initial;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.border_solid {
+  border: solid;
+  border-width: thin !important;
 }
