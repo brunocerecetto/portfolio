@@ -11,17 +11,20 @@ const HomeComponent = ({ scrollTo }) => (
     <div className="text-white text-base md:text-xl lg:text-4xl leading-none md:leading-normal lg:leading-relaxed text-center">
       <TextLoop children={["Hello , I'm", 'Hola, Soy ']} />
       <span className="text-highlight font-raleway-semibold font-bold"> Bruno Cerecetto</span>
-        .
+      .
       <br />
       <TextLoop
-        children={[
-          "I'm a full-stack web developer.",
-          'Soy desarrollador web Full Stack.',
-        ]}
+        children={["I'm a full-stack web developer.", 'Soy desarrollador web Full Stack.']}
       />
     </div>
     <div className="mb-4 z-50">
-      <button type="button" className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`} onClick={() => { scrollTo(); }}>
+      <button
+        type="button"
+        className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`}
+        onClick={() => {
+          scrollTo();
+        }}
+      >
         <span>Find out more!</span>
         <i className="fas fa-chevron-down" />
       </button>
@@ -32,6 +35,5 @@ const HomeComponent = ({ scrollTo }) => (
 HomeComponent.propTypes = {
   scrollTo: PropTypes.func.isRequired,
 };
-
 
 export default HomeComponent;
