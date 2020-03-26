@@ -3,30 +3,44 @@ import me from '../../assets/images/me.jpg';
 import Badge from './badges';
 import Header from '../header/header';
 import ProgressBar from './progress-bar';
-
+import styles from './about-me.module.scss';
 
 const AboutMeComponent = () => (
   <div className="min-h-screen">
-
     <Header text="about" />
 
     <div className="md:mx-16 xl:mx-56 flex flex-col lg:flex-row md:justify-between">
       <div className="flex flex-col justify-center items-center">
-        <img className="rounded-full max-w-xs mb-8" src={me} alt="" />
-        <h2 className="text-2xl font-black mb-5">Who&apos;s this guy?</h2>
-        <span className="text-center">
+        <div className="text-center mb-4">
+          <div className={styles.badge}>
+            <div className={styles.circle}>
+              <img className="rounded-full" src={me} alt="" />
+              <div className={styles.ribbon}>Who&apos;s this guy?</div>
+            </div>
+          </div>
+        </div>
+        <span className="text-center md:text-xl">
           Bruno is a Full Stack Developer currently working at
           <br />
-          <a href="https://dominion-cs.com" target="_blank" rel="noopener noreferrer" className="cursor-pointer text-highlight">Dominion Capital Strategies</a>
+          <a
+            href="https://dominion-cs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer text-highlight"
+          >
+            Dominion Capital Strategies
+          </a>
           {' '}
           in Montevideo, Uruguay 🇺🇾
         </span>
-        <span className="text-center">
+        <span className="text-center md:text-xl">
           His role in Dominion is to make sure that everything
           <br />
-          works as it should on the Front-End,
-          Javascript is his passion. ❤️
+          works as it should on the Front-End, Javascript is his passion. ❤️
         </span>
+      </div>
+      <div className="hidden lg:block -ml-40">
+        <hr className={`border h-ninety ${styles.border_solid} bg-highlight text-highlight`} />
       </div>
       <div className="flex flex-col items-center mt-5 lg:mt-0">
         <h2 className="text-2xl font-black mb-5">Technologies I enjoy:</h2>
