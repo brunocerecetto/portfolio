@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Element, scroller } from 'react-scroll';
 import HomeComponent from './components/home';
 import NavbarComponent from './components/navbar';
@@ -18,16 +18,17 @@ const App = () => {
     scroller.scrollTo('about', scrollType);
   };
   return (
-    <div>
-      <HomeComponent scrollTo={scrollToAbout} />
-      <NavbarComponent />
-      <Element name="about">
-        <AboutMeComponent />
-      </Element>
-      <FooterComponent />
-    </div>
+    <Suspense fallback={<div>Loading... </div>}>
+      <div>
+        <HomeComponent scrollTo={scrollToAbout} />
+        <NavbarComponent />
+        <Element name="about">
+          <AboutMeComponent />
+        </Element>
+        <FooterComponent />
+      </div>
+    </Suspense>
   );
 };
 
-//
 export default App;

@@ -2,8 +2,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#2d3748',
-        highlight: '#3182ce',
+        background: '#1B2431',
+        highlight: '#D5174E',
       },
       height: {
         ninety: '90%',
