@@ -1,31 +1,44 @@
-import React, { useState } from 'react';
-// import styles from './navbar.module.scss';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import styles from './navbar.module.scss';
 
-const home = '#';
+const Navbar = ({ scrollPosition }) => {
+  const siteUrl = '#';
 
-function NavbarComponent() {
-  const [opened, openMenu] = useState(false);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    setHeight(window.innerHeight * -1);
+  }, []);
 
   return (
+    <nav className={`${styles.main_header} ${scrollPosition < height ? styles.scrolled : ''}`}>
+      <div className={styles.logo}>
+        <a href={siteUrl}>BRUNO CERECETTO</a>
+      </div>
 
-    <nav className="bg-background sticky top-0 pb-3 text-lg md:text-2xl md:flex md:items-center border-b-4 border-highlight z-50">
-      <button className="text-white absolute right-0 mr-2 md:hidden" onClick={() => openMenu(!opened)} type="button">
-        <i className={`fas ${opened ? 'fa-times' : 'fa-bars'}`} />
-      </button>
-      <a href={home} className="font-bold text-highlight inline-block ml-2 md:mt-3 md:ml-40 hover:text-white">BRUNO CERECETTO</a>
-      <ul className={`list-none ${opened ? 'block' : 'hidden'} mt-3 ml-5 md:flex flex-row`}>
-        <li className="text-center mt-4 text-white md:m-0">
-          <a href={home} className="md:ml-6 hover:text-highlight">About</a>
+      <input type="checkbox" className={styles.menu_btn} id="menu-btn" />
+      <label htmlFor="menu-btn" className={styles.menu_icon}>
+        <span className={styles.menu_icon__line} />
+      </label>
+
+      <ul className={styles.nav_links}>
+        <li className={styles.nav_link}>
+          <button type="button">About</button>
         </li>
-        <li className="text-center m-4 text-white md:m-0">
-          <a href={home} className="md:ml-6 hover:text-highlight">Works</a>
+        <li className={styles.nav_link}>
+          <button type="button">Works</button>
         </li>
-        <li className="text-center m-4 text-white md:m-0">
-          <a href={home} className="md:ml-6 hover:text-highlight">Contact</a>
+        <li className={styles.nav_link}>
+          <button type="button">Contact</button>
         </li>
       </ul>
     </nav>
   );
-}
+};
 
-export default NavbarComponent;
+Navbar.propTypes = {
+  scrollPosition: PropTypes.number.isRequired,
+};
+
+export default Navbar;

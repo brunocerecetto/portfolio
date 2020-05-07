@@ -1,42 +1,305 @@
 @import './../../colors.scss';
 
-.active {
-  display: block;
+.main_header {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  height: 0px;
+  justify-content: space-between;
+  padding: 0 10vw;
+  position: fixed;
+  transition: 0.4s ease-out, 0.4s ease-in;
+  width: 100vw;
+  z-index: 100;
+  visibility: hidden;
+
+  a,
+  button {
+    text-transform: uppercase;
+  }
+
+  .logo {
+    a {
+      color: $highlight;
+    }
+  }
+
+  .nav_links {
+    display: flex;
+    list-style: none;
+
+    .nav_link {
+      transition: opacity 0.4s ease-in-out, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:nth-of-type(2) {
+        transition-delay: 0.1s;
+      }
+      &:nth-of-type(3) {
+        transition-delay: 0.2s;
+      }
+      &:nth-of-type(4) {
+        transition-delay: 0.3s;
+      }
+
+      button {
+        margin: 0.2rem;
+        padding: 1rem 0.5rem;
+      }
+
+      button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  .menu_icon {
+    cursor: pointer;
+    padding: 26px 10px;
+    position: relative;
+    z-index: 1;
+    display: none;
+
+    &__line {
+      background: #fff;
+      border-radius: 4px;
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 20px;
+      transition: background 0.8s ease;
+
+      &::before,
+      &::after {
+        background: #fff;
+        border-radius: 4px;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        transition: background 0.8s ease;
+      }
+
+      &::before {
+        transform: translateY(-5px);
+      }
+      &::after {
+        transform: translateY(5px);
+      }
+    }
+  }
+
+  .menu_btn {
+    display: none;
+
+    &:focus ~ .menu_icon {
+      .menu_icon__line {
+        &::before {
+          transform: translateY(-7px);
+        }
+        &::after {
+          transform: translateY(7px);
+        }
+      }
+    }
+  }
+
+  &.scrolled {
+    animation: show 0.5s;
+    background: $background;
+    height: 50px;
+    visibility: visible;
+  }
 }
 
-@media all and (min-width: 600px) {
-  .menu {
-    .logo {
-      flex: 1;
-      font-size: 24px;
+@media screen and (max-width: 767px) {
+  .main_header {
+    .menu_icon {
+      display: block;
+
+      .menu_icon__line {
+        animation: closeMid 0.8s backwards;
+        animation-direction: reverse;
+
+        &::before {
+          animation: closeTop 0.8s backwards;
+          animation-direction: reverse;
+        }
+        &::after {
+          animation: closeBtm 0.8s backwards;
+          animation-direction: reverse;
+        }
+      }
     }
-    .toggle {
-      flex: 1;
-      text-align: right;
+
+    .nav_links {
+      align-items: center;
+      background: #272727;
+      clip-path: circle(200px at top right);
+      color: #fff;
+      flex-direction: column;
+      font-size: 2rem;
+      height: 100vh;
+      justify-content: space-evenly;
+      left: 0;
+      opacity: 0;
+      padding: 10rem 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.8s 0.5s, clip-path 1s 0.5s;
+      width: 100vw;
+    }
+
+    .nav_link {
+      opacity: 0;
+      text-align: center;
+      transform: translateX(100%);
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .menu_btn:checked ~ .nav_links {
+      clip-path: circle(100% at center);
+      opacity: 1;
+
+      .nav_link {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 0.4s ease-in-out, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:nth-of-type(1) {
+          transition-delay: 0.7s;
+        }
+        &:nth-of-type(2) {
+          transition-delay: 0.8s;
+        }
+        &:nth-of-type(3) {
+          transition-delay: 0.9s;
+        }
+        &:nth-of-type(4) {
+          transition-delay: 1s;
+        }
+      }
+    }
+
+    .menu_btn:checked ~ .menu_icon {
+      border-radius: 50%;
+      animation: pulse 0.8s;
+
+      .menu_icon__line,
+      .menu_icon__line::before,
+      .menu_icon__line::after {
+        background: #fff;
+      }
+
+      .menu_icon__line {
+        animation: openMid 0.8s forwards;
+
+        &::before {
+          animation: openTop 0.8s forwards;
+        }
+
+        &::after {
+          animation: openBtm 0.8s forwards;
+        }
+      }
     }
   }
 }
 
-@media all and (min-width: 900px) {
-  .menu {
-    justify-content: baseline;
-    align-items: baseline;
+@keyframes show {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50px;
+  }
+}
 
-    .logo {
-      order: 0;
-    }
+@keyframes hide {
+  100% {
+    height: 50px;
+  }
+  0% {
+    height: 0px;
+  }
+}
 
-    .item {
-      order: 1;
-      font-size: 16px;
-      display: block;
-      width: auto;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.6);
+  }
+  to {
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0);
+  }
+}
 
-    .toggle {
-      display: none;
-    }
+@keyframes openTop {
+  0% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+
+@keyframes closeTop {
+  0% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+
+@keyframes openMid {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes closeMid {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes openBtm {
+  0% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+
+@keyframes closeBtm {
+  0% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
   }
 }
