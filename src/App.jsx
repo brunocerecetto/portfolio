@@ -9,7 +9,7 @@ import './App.scss';
 const scrollType = {
   duration: 800,
   delay: 50,
-  smooth: true, // linear “easeInQuint” “easeOutCubic”
+  smooth: true,
   offset: -10,
 };
 

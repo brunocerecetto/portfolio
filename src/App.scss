@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 html,
 body {
   height: 100%;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 ul {
   list-style-type: none;
   padding: 0 0 0 0;
 }
+
 a {
   text-decoration: none;
 }
+
 button {
   padding: 0;
   border: none;
   background-color: transparent;
-  /* show a hand cursor on hover; some argue that we
-  should keep the default arrow cursor for buttons */
 }
 
 button.active.focus,
