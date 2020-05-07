@@ -1,6 +1,7 @@
 import React from 'react';
 
 function FooterComponent() {
+  const year = new Date().getFullYear();
   return (
     <footer className="w-full bg-gray-800 text-white leading-tight py-4">
       <div>
@@ -37,8 +38,15 @@ function FooterComponent() {
       </div>
 
       <div className="w-full flex flex-wrap justify-center pb-4">
-        <ul>
-          <li className="text-sm md:text-base">&copy; 2019 - Bruno Cerecetto</li>
+        <ul className="flex flex-col items-center">
+          <li className="text-sm md:text-base">
+            &copy;
+            {' '}
+            {year}
+            {' '}
+            - Made with 🧉 & ❤️ by Bruno Cerecetto
+          </li>
+          <li className="text-xs md:text-sm">(also with some 🍺)</li>
         </ul>
       </div>
     </footer>
