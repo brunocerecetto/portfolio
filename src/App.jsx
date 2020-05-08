@@ -1,31 +1,37 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Element, scroller } from 'react-scroll';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+
 import HomeComponent from './components/home';
-import NavbarComponent from './components/navbar';
+import Navbar from './components/navbar';
 import AboutMeComponent from './components/aboutMe';
-import FooterComponent from './components/footer';
+import Footer from './components/footer';
+
 import './App.scss';
 
 const scrollType = {
   duration: 800,
   delay: 50,
-  smooth: true, // linear “easeInQuint” “easeOutCubic”
+  smooth: true,
   offset: -10,
 };
 
 const App = () => {
-  const scrollToAbout = () => {
-    scroller.scrollTo('about', scrollType);
-  };
+  const [scrollPosY, setScrollPosY] = useState(0);
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    setScrollPosY(currPos.y);
+  });
+
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <div>
-        <HomeComponent scrollTo={scrollToAbout} />
-        <NavbarComponent />
+        <Navbar scrollPosition={scrollPosY} />
+        <HomeComponent scrollTo={() => scroller.scrollTo('about', scrollType)} />
         <Element name="about">
           <AboutMeComponent />
         </Element>
-        <FooterComponent />
+        <Footer />
       </div>
     </Suspense>
   );

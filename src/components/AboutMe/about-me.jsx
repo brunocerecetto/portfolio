@@ -9,7 +9,7 @@ const AboutMeComponent = () => (
   <div className="min-h-screen">
     <Header text="about" />
 
-    <div className="md:mx-16 xl:mx-56 flex flex-col lg:flex-row md:justify-between">
+    <div className="md:mx-16 flex flex-col lg:flex-row md:justify-between">
       <div className="flex flex-col justify-center items-center">
         <div className="text-center mb-4">
           <div className={styles.badge}>
@@ -36,7 +36,11 @@ const AboutMeComponent = () => (
         <span className="text-center md:text-xl">
           His role in Dominion is to make sure that everything
           <br />
-          works as it should on the Front-End, Javascript is his passion. ❤️
+          works as it should on the Front-End
+          <br />
+          but does things on the backend too 😂
+          <br />
+          Javascript is his passion. ❤️
         </span>
       </div>
       <div className="hidden lg:block -ml-40">
