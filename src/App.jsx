@@ -26,12 +26,16 @@ const App = () => {
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <div>
-        <Navbar scrollPosition={scrollPosY} />
+        {
+          // <Navbar scrollPosition={scrollPosY} />
+        }
         <HomeComponent scrollTo={() => scroller.scrollTo('about', scrollType)} />
-        <Element name="about">
-          <AboutMeComponent />
-        </Element>
-        <Footer />
+        {
+          // <Element name="about">
+          //   <AboutMeComponent />
+          // </Element>
+          // <Footer />
+        }
       </div>
     </Suspense>
   );
