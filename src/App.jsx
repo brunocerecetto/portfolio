@@ -5,7 +5,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import HomeComponent from './components/home';
 import Navbar from './components/navbar';
 import AboutMeComponent from './components/aboutMe';
-import FooterComponent from './components/footer';
+import Footer from './components/footer';
 
 import './App.scss';
 
@@ -31,7 +31,7 @@ const App = () => {
         <Element name="about">
           <AboutMeComponent />
         </Element>
-        <FooterComponent />
+        <Footer />
       </div>
     </Suspense>
   );
