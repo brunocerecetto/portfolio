@@ -16,7 +16,7 @@
   display: inline-block;
   top: 0;
   transition: all 0.2s ease;
-  background: linear-gradient(to bottom right, #d5174e 0%, $highlight 100%);
+  background: linear-gradient(to bottom right, $highlight 0%, $highlight 100%);
   color: $highlight;
   &:before,
   &:after {
@@ -76,73 +76,3 @@
     justify-content: center;
   }
 }
-
-// .badge {
-//   position: relative;
-//   margin: 1.5em 3em;
-//   width: 4em;
-//   height: 6.2em;
-//   border-radius: 10px;
-//   display: inline-block;
-//   top: 0;
-//   transition: all 0.2s ease;
-//   background: linear-gradient(to bottom right, #7eb8ee 0%, $highlight 100%);
-//   color: $highlight;
-//   &:before,
-//   &:after {
-//     position: absolute;
-//     width: inherit;
-//     height: inherit;
-//     border-radius: inherit;
-//     background: inherit;
-//     content: '';
-//     @include margin-auto;
-//   }
-//   &:before {
-//     transform: rotate(60deg);
-//   }
-//   &:after {
-//     transform: rotate(-60deg);
-//   }
-//   &:hover {
-//     top: -4px;
-//   }
-//   .circle {
-//     width: 60px;
-//     height: 60px;
-//     position: absolute;
-//     background: #fff;
-//     z-index: 10;
-//     border-radius: 50%;
-//     @include margin-auto;
-//     i {
-//       font-size: 2em;
-//       margin-top: 8px;
-//     }
-//   }
-//   .font {
-//     display: inline-block;
-//     margin-top: 1em;
-//   }
-//   .ribbon {
-//     position: absolute;
-//     border-radius: 4px;
-//     padding: 5px 5px 4px;
-//     width: 100px;
-//     z-index: 11;
-//     color: #fff;
-//     bottom: 12px;
-//     left: 50%;
-//     margin-left: -55px;
-//     height: 15px;
-//     font-size: 14px;
-//     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
-//     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-//     text-transform: uppercase;
-//     background: linear-gradient(to bottom right, #555 0%, #333 100%);
-//     box-sizing: initial;
-//     align-items: center;
-//     display: flex;
-//     justify-content: center;
-//   }
-// }

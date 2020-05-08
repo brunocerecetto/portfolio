@@ -16,7 +16,7 @@
   display: inline-block;
   top: 0;
   transition: all 0.2s ease;
-  background: linear-gradient(to bottom right, #d5174e 0%, $highlight 100%);
+  background: linear-gradient(to bottom right, $highlight 0%, $highlight 100%);
   color: $highlight;
   &:before,
   &:after {
