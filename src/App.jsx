@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from 'react';
 import { Element, scroller } from 'react-scroll';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import ReactGA from 'react-ga';
 
 import HomeComponent from './components/home';
 import Navbar from './components/navbar';
