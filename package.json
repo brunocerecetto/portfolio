@@ -39,7 +39,7 @@
     "lint": "npx eslint --ext .jsx,.js src",
     "clean-bucket": "aws s3 rm s3://soybruno.com --recursive",
     "sync-bucket": "aws s3 sync build/ s3://soybruno.com",
-    "deploy": "npm run build && npm run clean-bucket && npm run sync-bucket"
+    "deploy": "yarn run build && yarn run clean-bucket && yarn run sync-bucket"
   },
   "husky": {
     "hooks": {
