@@ -17,14 +17,14 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-ga": "^2.7.0",
+    "react-gtm-module": "^2.0.8",
+    "react-particles-js": "^3.2.1",
     "react-i18next": "^11.3.5",
-    "react-particles-js": "^2.7.0",
     "react-scripts": "^3.3.0",
     "react-scroll": "^1.7.14",
     "react-spring": "^8.0.27",
     "react-sticky": "^6.0.3",
-    "react-text-loop": "^2.2.1",
+    "react-text-loop": "^2.3.0",
     "react-visibility-sensor": "^5.1.1"
   },
   "scripts": {
@@ -33,13 +33,13 @@
     "build:css": "postcss src/assets/styles/tailwind.css -o src/index.css",
     "watch:css": "postcss src/assets/styles/tailwind.css -o src/index.css -w",
     "start:react": "react-scripts start",
-    "build:react": "react-scripts build",
+    "build:react": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint --ext .jsx,.js src",
-    "clean-bucket": "aws s3 rm s3://soybruno.com --recursive",
-    "sync-bucket": "aws s3 sync build/ s3://soybruno.com",
-    "deploy": "npm run build && npm run clean-bucket && npm run sync-bucket"
+    "clean-bucket": "aws s3 rm s3://www.soybruno.com --recursive",
+    "sync-bucket": "aws s3 sync build/ s3://www.soybruno.com",
+    "deploy": "yarn run build && yarn run clean-bucket && yarn run sync-bucket"
   },
   "husky": {
     "hooks": {
