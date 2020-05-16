@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -12,17 +13,29 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-linkedin md:fa-2x hover:text-highlight" />
+              <FontAwesomeIcon
+                className="hover:text-highlight"
+                icon={['fab', 'linkedin']}
+                size="2x"
+              />
             </a>
           </li>
           <li className="m-2 text-base">
             <a href="https://twitter.com/brunocerecetto" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter md:fa-2x hover:text-highlight" />
+              <FontAwesomeIcon
+                className="hover:text-highlight"
+                icon={['fab', 'twitter']}
+                size="2x"
+              />
             </a>
           </li>
           <li className="m-2 text-base">
             <a href="https://github.com/brunocerecetto" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-github md:fa-2x hover:text-highlight" />
+              <FontAwesomeIcon
+                className="hover:text-highlight"
+                icon={['fab', 'github']}
+                size="2x"
+              />
             </a>
           </li>
           <li className="m-2 text-base">
@@ -31,7 +44,11 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-stack-overflow md:fa-2x hover:text-highlight" />
+              <FontAwesomeIcon
+                className="hover:text-highlight"
+                icon={['fab', 'stack-overflow']}
+                size="2x"
+              />
             </a>
           </li>
         </ul>

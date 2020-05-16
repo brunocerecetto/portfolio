@@ -6,7 +6,8 @@ import TagManager from 'react-gtm-module';
 import App from './App';
 
 import './index.css';
-// import './i18n';
+import './i18n';
+import './fontawesome';
 
 import * as serviceWorker from './serviceWorker';
 
