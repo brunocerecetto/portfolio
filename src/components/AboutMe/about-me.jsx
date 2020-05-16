@@ -7,10 +7,10 @@ import styles from './about-me.module.scss';
 
 const AboutMeComponent = () => {
   const badges = [
-    { text: 'javascript', icon: 'fab fa-js-square' },
-    { text: 'angular', icon: 'fab fa-angular' },
-    { text: 'react', icon: 'fab fa-react' },
-    { text: 'Node JS', icon: 'fab fa-node-js' },
+    { text: 'javascript', icon: 'js-square' },
+    { text: 'angular', icon: 'angular' },
+    { text: 'react', icon: 'react' },
+    { text: 'Node JS', icon: 'node-js' },
   ];
 
   const skills = [

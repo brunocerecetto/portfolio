@@ -5,6 +5,19 @@ import {
   faTwitter,
   faGithub,
   faStackOverflow,
+  faJsSquare,
+  faAngular,
+  faReact,
+  faNodeJs,
 } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faLinkedin, faTwitter, faGithub, faStackOverflow);
+library.add(
+  faLinkedin,
+  faTwitter,
+  faGithub,
+  faStackOverflow,
+  faJsSquare,
+  faAngular,
+  faReact,
+  faNodeJs,
+);
