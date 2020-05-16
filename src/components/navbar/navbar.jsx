@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+
 import styles from './navbar.module.scss';
 
 const Navbar = ({ scrollPosition }) => {
   const siteUrl = '#';
+  const { t } = useTranslation();
 
   const [height, setHeight] = useState(0);
 
@@ -24,13 +27,13 @@ const Navbar = ({ scrollPosition }) => {
 
       <ul className={styles.nav_links}>
         <li className={styles.nav_link}>
-          <button type="button">About</button>
+          <button type="button">{t('navbar.about')}</button>
         </li>
         <li className={styles.nav_link}>
-          <button type="button">Works</button>
+          <button type="button">{t('navbar.works')}</button>
         </li>
         <li className={styles.nav_link}>
-          <button type="button">Contact</button>
+          <button type="button">{t('navbar.contact')}</button>
         </li>
       </ul>
     </nav>

@@ -20,6 +20,10 @@ button {
   padding: 0;
   border: none;
   background-color: transparent;
+
+  &:focus {
+    outline: none !important;
+  }
 }
 
 button.active.focus,
