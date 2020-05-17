@@ -1,8 +1,20 @@
 import React from 'react';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../libraries/i18n';
 
 function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useTranslation();
+  const [lang, setLanguage] = React.useState('en');
+
+  const handleChange = (event) => {
+    const lng = event.target.value;
+    setLanguage(lng);
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <footer className="w-full h-48 bg-gray-800 text-white leading-tight py-2">
@@ -61,12 +73,12 @@ function Footer() {
         </div>
 
         <div className="w-full flex flex-wrap items-center pb-4">
-          <div className="ml-4 w-full md:w-1/3">
-            <span className="mr-2">view this site in</span>
-            <select>
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
-            </select>
+          <div className="ml-4 w-full md:w-1/3 flex items-center">
+            <span className="mr-2s">{t('footer.viewThisSite')}</span>
+            <Select id="select-outlined" value={lang} onChange={handleChange} variant="outlined">
+              <MenuItem value="en">{t('footer.english')}</MenuItem>
+              <MenuItem value="es">{t('footer.spanish')}</MenuItem>
+            </Select>
           </div>
 
           <div className="w-full md:w-1/3">

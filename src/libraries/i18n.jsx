@@ -15,6 +15,11 @@ i18n.use(initReactI18next).init({
           works: 'works',
           contact: 'contact',
         },
+        footer: {
+          viewThisSite: 'view this site in',
+          english: 'english',
+          spanish: 'spanish',
+        },
       },
     },
     es: {
@@ -23,6 +28,11 @@ i18n.use(initReactI18next).init({
           about: 'sobre mi',
           works: 'trabajos',
           contact: 'contacto',
+        },
+        footer: {
+          viewThisSite: 'ver este sitio en',
+          english: 'ingles',
+          spanish: 'español',
         },
       },
     },
