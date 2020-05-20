@@ -3,10 +3,23 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
+import { makeStyles } from '@material-ui/core/styles';
 import i18n from '../../libraries/i18n';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    color: 'white',
+    fontFamily: "'Montserrat', sans-serif",
+    fontSize: '0.75rem',
+  },
+  iconOutlined: {
+    color: 'white',
+  },
+}));
 
 function Footer() {
   const year = new Date().getFullYear();
+  const classes = useStyles();
   const { t } = useTranslation();
   const [lang, setLanguage] = React.useState('en');
 
@@ -17,10 +30,10 @@ function Footer() {
   };
 
   return (
-    <footer className="w-full h-48 bg-gray-800 text-white leading-tight py-2">
+    <footer className="w-full min-h-48 bg-gray-800 text-white leading-tight py-2">
       <div className="h-full flex flex-col justify-between">
         <div>
-          <ul className="flex justify-center items-center pt-5">
+          <ul className="flex justify-center items-center pt-5 mb-4 md:mb-0">
             <li className="m-2 text-base">
               <a
                 href="https://www.linkedin.com/in/brunocerecetto/"
@@ -72,10 +85,21 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="w-full flex flex-wrap items-center pb-4">
-          <div className="ml-4 w-full md:w-1/3 flex items-center">
+        <div className="w-full flex flex-col md:flex-row items-center pb-4">
+          <div className="ml-4 w-full md:w-1/3 flex justify-center md:justify-start items-center text-xs mb-4 md:mb-0">
             <span className="mr-2s">{t('footer.viewThisSite')}</span>
-            <Select id="select-outlined" value={lang} onChange={handleChange} variant="outlined">
+            <Select
+              id="select-outlined"
+              value={lang}
+              onChange={handleChange}
+              variant="outlined"
+              inputProps={{
+                classes: {
+                  root: classes.root,
+                  iconOutlined: classes.iconOutlined,
+                },
+              }}
+            >
               <MenuItem value="en">{t('footer.english')}</MenuItem>
               <MenuItem value="es">{t('footer.spanish')}</MenuItem>
             </Select>
@@ -84,32 +108,9 @@ function Footer() {
           <div className="w-full md:w-1/3">
             <ul className="flex flex-col items-center">
               <li className="text-sm md:text-base">
-                &copy;
-                {' '}
-                {year}
-                {' '}
-                - Made with
-                {' '}
-                <span role="img" aria-label="mate">
-                  🧉
-                </span>
-                {' '}
-                &
-                {' '}
-                <span role="img" aria-label="heart">
-                  ❤️
-                </span>
-                {' '}
-                by Bruno Cerecetto
+                {t('footer.madeBy', { year, mate: '🧉', heart: '❤️' })}
               </li>
-              <li className="text-xs md:text-sm">
-                (also with some
-                {' '}
-                <span role="img" aria-label="beer">
-                  🍺
-                </span>
-                )
-              </li>
+              <li className="text-xs md:text-sm">{t('footer.also', { beer: '🍺' })}</li>
             </ul>
           </div>
         </div>
