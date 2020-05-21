@@ -1,16 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Trans } from 'react-i18next';
 import me from '../../assets/images/me.jpg';
 import Badge from './badges';
-import Header from '../header/header';
+import Title from '../title';
 import ProgressBar from './progress-bar';
 import styles from './about-me.module.scss';
 
-const AboutMeComponent = () => {
+const AboutMe = ({ t }) => {
   const badges = [
-    { text: 'javascript', icon: 'fab fa-js-square' },
-    { text: 'angular', icon: 'fab fa-angular' },
-    { text: 'react', icon: 'fab fa-react' },
-    { text: 'Node JS', icon: 'fab fa-node-js' },
+    { text: 'javascript', icon: 'js-square' },
+    { text: 'angular', icon: 'angular' },
+    { text: 'react', icon: 'react' },
+    { text: 'Node JS', icon: 'node-js' },
   ];
 
   const skills = [
@@ -27,7 +29,7 @@ const AboutMeComponent = () => {
 
   return (
     <div className="min-h-screen">
-      <Header text="about" />
+      <Title text={t('navbar.about')} />
 
       <div className="md:mx-16 flex flex-col lg:flex-row md:justify-between">
         <div className="flex flex-col justify-center items-center">
@@ -40,40 +42,44 @@ const AboutMeComponent = () => {
             </div>
           </div>
           <span className="text-center md:text-xl">
-            Bruno is a Full Stack Developer currently working at
-            <br />
-            <a
-              href="https://dominion-cs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer text-highlight"
-            >
-              Dominion Capital Strategies
-            </a>
-            {' '}
-            in Montevideo, Uruguay 🇺🇾
-          </span>
-          <span className="text-center md:text-xl">
-            His role in Dominion is to make sure that everything
-            <br />
-            works as it should on the Front-End
-            <br />
-            but does things on the backend too 😂
-            <br />
-            Javascript is his passion. ❤️
+            <Trans i18nKey="about.description">
+              Bruno is a Full Stack Developer currently working at
+              <br />
+              <a
+                href="https://dominion-cs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-highlight"
+              >
+                Dominion Capital Strategies
+              </a>
+              {' '}
+              in Montevideo, Uruguay 🇺🇾
+              <br />
+              His role in Dominion is to make sure that everything
+              <br />
+              works as it should on the Front-End
+              <br />
+              but does things on the backend too 😂
+              <br />
+              Javascript is his passion. ❤️
+            </Trans>
           </span>
         </div>
         <div className="hidden lg:block -ml-40">
           <hr className={`border h-ninety ${styles.border_solid} bg-highlight text-highlight`} />
         </div>
         <div className="flex flex-col items-center mt-5 lg:mt-0">
-          <h2 className="text-2xl font-black mb-5">Technologies I enjoy:</h2>
+          <h2 className="text-2xl font-black mb-5">{t('about.technologies')}</h2>
           <div className="flex flex-row justify-between">
             {badges.map(b => (
               <Badge key={b.text} text={b.text} icon={b.icon} />
             ))}
           </div>
-          <h2 className="text-2xl font-black my-5">Skills:</h2>
+          <h2 className="text-2xl font-black my-5">
+            {t('about.skills')}
+            :
+          </h2>
           <div className="flex flex-col items-center w-full mb-20">
             {skills.map(s => (
               <ProgressBar key={s.text} skill={s.text} percentage={s.percentage} />
@@ -85,4 +91,8 @@ const AboutMeComponent = () => {
   );
 };
 
-export default AboutMeComponent;
+AboutMe.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default AboutMe;

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 import styles from './navbar.module.scss';
 
-const Navbar = ({ scrollPosition }) => {
+const Navbar = ({ t, scrollPosition }) => {
   const siteUrl = '#';
-
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -24,13 +24,13 @@ const Navbar = ({ scrollPosition }) => {
 
       <ul className={styles.nav_links}>
         <li className={styles.nav_link}>
-          <button type="button">About</button>
+          <button type="button">{t('navbar.about')}</button>
         </li>
         <li className={styles.nav_link}>
-          <button type="button">Works</button>
+          <button type="button">{t('navbar.works')}</button>
         </li>
         <li className={styles.nav_link}>
-          <button type="button">Contact</button>
+          <button type="button">{t('navbar.contact')}</button>
         </li>
       </ul>
     </nav>
@@ -38,6 +38,7 @@ const Navbar = ({ scrollPosition }) => {
 };
 
 Navbar.propTypes = {
+  t: PropTypes.func.isRequired,
   scrollPosition: PropTypes.number.isRequired,
 };
 

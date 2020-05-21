@@ -1,10 +1,11 @@
 import React from 'react';
 import TextLoop from 'react-text-loop';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ParticulesComponent from './particulesComponent';
-// import styles from './home.module.scss';
+import styles from './home.module.scss';
 
-const HomeComponent = ({ scrollTo }) => (
+const HomeComponent = ({ t, scrollTo }) => (
   <div className="w-full h-screen bg-background flex flex-col justify-between items-center">
     <div />
     <ParticulesComponent />
@@ -18,24 +19,22 @@ const HomeComponent = ({ scrollTo }) => (
       />
     </div>
     <div className="mb-4 z-50">
-      {
-        // <button
-        // type="button"
-        // className={`text-white md:text-lg lg:text-2xl flex flex-col
-        // items-center ${styles.animate} ${styles.bounce}`}
-        // onClick={() => {
-        //   scrollTo();
-        // }}
-        // >
-        // <span>Find out more!</span>
-        // <i className="fas fa-chevron-down" />
-        // </button>
-      }
+      <button
+        type="button"
+        className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`}
+        onClick={() => {
+          scrollTo();
+        }}
+      >
+        <span>{t('home.findOutMore')}</span>
+        <FontAwesomeIcon className="hover:text-highlight" icon={['fas', 'chevron-down']} />
+      </button>
     </div>
   </div>
 );
 
 HomeComponent.propTypes = {
+  t: PropTypes.func.isRequired,
   scrollTo: PropTypes.func.isRequired,
 };
 

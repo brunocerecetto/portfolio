@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = ({ text }) => (
+const Title = ({ text }) => (
   <div className="my-8">
     <div className="flex flex-col items-center">
       <h1 className="font-black text-2xl md:text-4xl uppercase">{text}</h1>
@@ -10,8 +10,8 @@ const Header = ({ text }) => (
   </div>
 );
 
-Header.propTypes = {
+Title.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export default Header;
+export default Title;

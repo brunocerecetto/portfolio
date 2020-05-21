@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './badge.module.scss';
 
 const Badge = ({ icon, text }) => (
   <div className="text-center">
     <div className={styles.badge}>
       <div className={styles.circle}>
-        <i className={`${icon}`} />
+        <FontAwesomeIcon size="lg" icon={['fab', icon]} />
       </div>
-      <div className={styles.ribbon}>{ text }</div>
+      <div className={styles.ribbon}>{text}</div>
     </div>
   </div>
 );

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import TagManager from 'react-gtm-module';
+import './libraries/fontawesome';
+import './libraries/i18n';
 
+import TagManager from 'react-gtm-module';
 import App from './App';
 
 import './index.css';
-// import './i18n';
-
 import * as serviceWorker from './serviceWorker';
 
 // Google Tag Manager initializer
