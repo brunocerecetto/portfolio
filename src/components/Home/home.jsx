@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ParticulesComponent from './particulesComponent';
 import styles from './home.module.scss';
 
-const HomeComponent = ({ scrollTo }) => (
+const HomeComponent = ({ t, scrollTo }) => (
   <div className="w-full h-screen bg-background flex flex-col justify-between items-center">
     <div />
     <ParticulesComponent />
@@ -26,7 +26,7 @@ const HomeComponent = ({ scrollTo }) => (
           scrollTo();
         }}
       >
-        <span>Find out more!</span>
+        <span>{t('home.findOutMore')}</span>
         <FontAwesomeIcon className="hover:text-highlight" icon={['fas', 'chevron-down']} />
       </button>
     </div>
@@ -34,6 +34,7 @@ const HomeComponent = ({ scrollTo }) => (
 );
 
 HomeComponent.propTypes = {
+  t: PropTypes.func.isRequired,
   scrollTo: PropTypes.func.isRequired,
 };
 

@@ -15,6 +15,9 @@ i18n.use(initReactI18next).init({
           works: 'works',
           contact: 'contact',
         },
+        home: {
+          findOutMore: 'Find out more!',
+        },
         about: {
           description:
             'Bruno is a Full Stack Developer currently working at<br/><2>Dominion Capital Strategies</2> in Montevideo, Uruguay 🇺🇾<br/>His role in Dominion is to make sure that everything<br/>works as it should on the Front-End<br/>but does things on the backend too 😂<br/>Javascript is his passion. ❤️',
@@ -36,6 +39,9 @@ i18n.use(initReactI18next).init({
           about: 'sobre mi',
           works: 'trabajos',
           contact: 'contacto',
+        },
+        home: {
+          findOutMore: 'Descubre más!',
         },
         about: {
           description:

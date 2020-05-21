@@ -29,7 +29,7 @@ const App = () => {
     <Suspense fallback={<div>Loading... </div>}>
       <div>
         <Navbar t={t} scrollPosition={scrollPosY} />
-        <HomeComponent scrollTo={() => scroller.scrollTo('about', scrollType)} />
+        <HomeComponent t={t} scrollTo={() => scroller.scrollTo('about', scrollType)} />
         <Element name="about">
           <AboutMe t={t} />
         </Element>
