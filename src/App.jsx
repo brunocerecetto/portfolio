@@ -1,10 +1,11 @@
 import React, { Suspense, useState } from 'react';
 import { Element, scroller } from 'react-scroll';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import { useTranslation } from 'react-i18next';
 
 import HomeComponent from './components/home';
 import Navbar from './components/navbar';
-import AboutMeComponent from './components/aboutMe';
+import AboutMe from './components/aboutMe';
 import Footer from './components/footer';
 
 import './App.scss';
@@ -17,6 +18,7 @@ const scrollType = {
 };
 
 const App = () => {
+  const { t } = useTranslation();
   const [scrollPosY, setScrollPosY] = useState(0);
 
   useScrollPosition(({ prevPos, currPos }) => {
@@ -26,12 +28,12 @@ const App = () => {
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <div>
-        <Navbar scrollPosition={scrollPosY} />
+        <Navbar t={t} scrollPosition={scrollPosY} />
         <HomeComponent scrollTo={() => scroller.scrollTo('about', scrollType)} />
         <Element name="about">
-          <AboutMeComponent />
+          <AboutMe t={t} />
         </Element>
-        <Footer />
+        <Footer t={t} />
       </div>
     </Suspense>
   );

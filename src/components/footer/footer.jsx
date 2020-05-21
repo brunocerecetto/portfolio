@@ -2,8 +2,8 @@ import React from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 import i18n from '../../libraries/i18n';
 
 const useStyles = makeStyles(theme => ({
@@ -17,10 +17,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Footer() {
+const Footer = ({ t }) => {
   const year = new Date().getFullYear();
   const classes = useStyles();
-  const { t } = useTranslation();
   const [lang, setLanguage] = React.useState('en');
 
   const handleChange = (event) => {
@@ -117,6 +116,10 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+Footer.propTypes = {
+  t: PropTypes.func.isRequired,
+};
 
 export default Footer;

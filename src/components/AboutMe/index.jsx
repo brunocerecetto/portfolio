@@ -1,3 +1,3 @@
-import AboutMeComponent from './about-me';
+import AboutMe from './about-me';
 
-export default AboutMeComponent;
+export default AboutMe;

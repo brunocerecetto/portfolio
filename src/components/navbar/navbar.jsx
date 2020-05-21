@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 
 import styles from './navbar.module.scss';
 
-const Navbar = ({ scrollPosition }) => {
+const Navbar = ({ t, scrollPosition }) => {
   const siteUrl = '#';
-  const { t } = useTranslation();
-
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -41,6 +38,7 @@ const Navbar = ({ scrollPosition }) => {
 };
 
 Navbar.propTypes = {
+  t: PropTypes.func.isRequired,
   scrollPosition: PropTypes.number.isRequired,
 };
 
