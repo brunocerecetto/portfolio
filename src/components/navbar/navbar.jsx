@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './navbar.module.scss';
 
-const Navbar = ({ t, scrollPosition }) => {
+const Navbar = ({ t, scrollPosition, scrollTo }) => {
   const siteUrl = '#';
   const [height, setHeight] = useState(0);
 
@@ -24,13 +23,19 @@ const Navbar = ({ t, scrollPosition }) => {
 
       <ul className={styles.nav_links}>
         <li className={styles.nav_link}>
-          <button type="button">{t('navbar.about')}</button>
+          <button type="button" onClick={() => scrollTo('about')}>
+            {t('navbar.about')}
+          </button>
         </li>
         <li className={styles.nav_link}>
-          <button type="button">{t('navbar.works')}</button>
+          <button type="button" onClick={() => scrollTo('works')}>
+            {t('navbar.works')}
+          </button>
         </li>
         <li className={styles.nav_link}>
-          <button type="button">{t('navbar.contact')}</button>
+          <button type="button" onClick={() => scrollTo('contact')}>
+            {t('navbar.contact')}
+          </button>
         </li>
       </ul>
     </nav>
@@ -40,6 +45,7 @@ const Navbar = ({ t, scrollPosition }) => {
 Navbar.propTypes = {
   t: PropTypes.func.isRequired,
   scrollPosition: PropTypes.number.isRequired,
+  scrollTo: PropTypes.func.isRequired,
 };
 
 export default Navbar;

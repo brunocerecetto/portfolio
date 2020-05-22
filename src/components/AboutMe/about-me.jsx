@@ -29,7 +29,7 @@ const AboutMe = ({ t }) => {
 
   return (
     <div className="min-h-screen">
-      <Title text={t('navbar.about')} />
+      <Title text={t('navbar.about')} fontColor="black" />
 
       <div className="md:mx-16 flex flex-col lg:flex-row md:justify-between">
         <div className="flex flex-col justify-center items-center">

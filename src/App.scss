@@ -36,10 +36,6 @@ button:focus {
   box-shadow: none;
 }
 
-.MuiOutlinedInput-notchedOutline {
-  border-color: white !important;
-  top: 5px !important;
-  left: 5px !important;
-  right: 0px !important;
-  bottom: 10px !important;
+.MuiFormControl-root {
+  width: 100%;
 }
