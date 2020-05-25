@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
           skills: 'Skills',
         },
         contact: {
-          amazingthings: "Let's do amazing things together 🦄!",
+          amazingthings: "Let's do amazing things together 🦄✨!",
           name: 'Name',
           email: 'Email',
           message: 'Message',
@@ -57,7 +57,7 @@ i18n.use(initReactI18next).init({
           skills: 'Habilidades',
         },
         contact: {
-          amazingthings: 'Hagamos cosas increibles juntos 🦄!',
+          amazingthings: 'Hagamos cosas increibles juntos 🦄✨!',
           name: 'Nombre',
           email: 'Email',
           message: 'Mensaje',
