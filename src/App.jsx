@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import HomeComponent from './components/home';
 import Navbar from './components/navbar';
 import AboutMe from './components/aboutMe';
+import Contact from './components/contact';
 import Footer from './components/footer';
 
 import './App.scss';
@@ -25,13 +26,18 @@ const App = () => {
     setScrollPosY(currPos.y);
   });
 
+  const scrollTo = to => scroller.scrollTo(to, scrollType);
+
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <div>
-        <Navbar t={t} scrollPosition={scrollPosY} />
-        <HomeComponent t={t} scrollTo={() => scroller.scrollTo('about', scrollType)} />
+        <Navbar t={t} scrollPosition={scrollPosY} scrollTo={scrollTo} />
+        <HomeComponent t={t} scrollTo={scrollTo} />
         <Element name="about">
           <AboutMe t={t} />
+        </Element>
+        <Element name="contact">
+          <Contact t={t} />
         </Element>
         <Footer t={t} />
       </div>

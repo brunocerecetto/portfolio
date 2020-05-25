@@ -24,6 +24,13 @@ i18n.use(initReactI18next).init({
           technologies: 'Technologies I enjoy:',
           skills: 'Skills',
         },
+        contact: {
+          amazingthings: "Let's do amazing things together 🦄✨!",
+          name: 'Name',
+          email: 'Email',
+          message: 'Message',
+          findMe: 'You can also find me at:',
+        },
         footer: {
           viewThisSite: 'View this site in',
           english: 'English',
@@ -48,6 +55,13 @@ i18n.use(initReactI18next).init({
             'Bruno es Desarrollador Full Stack, actualmente trabajando<br/> en <2>Dominion Capital Strategies</2> en Montevideo, Uruguay 🇺🇾<br/>Su rol en Dominion es asegurarse que todo funcione<br/> como debería en el Front-End, pero hace<br/>cosas en el Back-End también 😂<br/>Javascript es su pasión. ❤️',
           technologies: 'Tecnologías que me gustan:',
           skills: 'Habilidades',
+        },
+        contact: {
+          amazingthings: 'Hagamos cosas increibles juntos 🦄✨!',
+          name: 'Nombre',
+          email: 'Email',
+          message: 'Mensaje',
+          findMe: 'También me podes encontrar en:',
         },
         footer: {
           viewThisSite: 'Ver este sitio en',

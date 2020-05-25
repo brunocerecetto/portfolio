@@ -22,9 +22,7 @@ const HomeComponent = ({ t, scrollTo }) => (
       <button
         type="button"
         className={`text-white md:text-lg lg:text-2xl flex flex-col items-center ${styles.animate} ${styles.bounce}`}
-        onClick={() => {
-          scrollTo();
-        }}
+        onClick={() => scrollTo('about')}
       >
         <span>{t('home.findOutMore')}</span>
         <FontAwesomeIcon className="hover:text-highlight" icon={['fas', 'chevron-down']} />
