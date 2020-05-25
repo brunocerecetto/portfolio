@@ -27,7 +27,8 @@
     "react-spring": "^8.0.27",
     "react-sticky": "^6.0.3",
     "react-text-loop": "^2.3.0",
-    "react-visibility-sensor": "^5.1.1"
+    "react-visibility-sensor": "^5.1.1",
+    "snyk": "^1.323.2"
   },
   "scripts": {
     "start": "npm-run-all --parallel watch:css start:react",
@@ -41,7 +42,9 @@
     "lint": "npx eslint --ext .jsx,.js src",
     "clean-bucket": "aws s3 rm s3://www.soybruno.com --recursive",
     "sync-bucket": "aws s3 sync build/ s3://www.soybruno.com",
-    "deploy": "yarn run build && yarn run clean-bucket && yarn run sync-bucket"
+    "deploy": "yarn run build && yarn run clean-bucket && yarn run sync-bucket",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "husky": {
     "hooks": {
