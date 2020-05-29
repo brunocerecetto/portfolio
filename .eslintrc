@@ -21,7 +21,8 @@
     "no-unused-vars": "off",
     "jsx-a11y/accessible-emoji": "off",
     "react/jsx-props-no-spreading": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/forbid-prop-types": "off"
   },
   "plugins": ["react", "jsx-a11y", "import"]
 }
