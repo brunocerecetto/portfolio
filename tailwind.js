@@ -7,6 +7,7 @@ module.exports = {
       },
       height: {
         ninety: '90%',
+        eighty: '80%',
       },
       width: {
         'w-auto': 'auto',

@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import HomeComponent from './components/home';
 import Navbar from './components/navbar';
 import AboutMe from './components/aboutMe';
+import Works from './components/works';
 import Contact from './components/contact';
 import Footer from './components/footer';
 
@@ -35,6 +36,9 @@ const App = () => {
         <HomeComponent t={t} scrollTo={scrollTo} />
         <Element name="about">
           <AboutMe t={t} />
+        </Element>
+        <Element name="works">
+          <Works t={t} />
         </Element>
         <Element name="contact">
           <Contact t={t} />
