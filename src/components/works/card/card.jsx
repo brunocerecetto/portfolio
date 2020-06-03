@@ -29,7 +29,7 @@ const Card = ({ work }) => {
           backgroundImage: `url(${work.img})`,
         }}
       />
-      <div className="flex flex-col text-center">
+      <div className="flex flex-col text-center bg-white">
         <a
           href={work.link}
           target="_blank"
