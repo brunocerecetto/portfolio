@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Formik } from 'formik';
+import axios from 'axios';
 
 import Title from '../title';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -59,79 +61,130 @@ const Contact = ({ t }) => {
         </div>
 
         <div className="flex justify-center my-10">
-          <form className={classes.root} noValidate autoComplete="off">
-            <div>
-              <TextField
-                id="name"
-                label={t('contact.name')}
-                variant="outlined"
-                classes={classes.textfield}
-                InputLabelProps={{
-                  classes: {
-                    root: classes.cssLabel,
-                    focused: classes.cssFocused,
-                  },
-                }}
-                InputProps={{
-                  classes: {
-                    root: classes.cssOutlinedInput,
-                    focused: classes.cssFocused,
-                    notchedOutline: classes.notchedOutline,
-                  },
-                }}
-              />
-            </div>
-            <div>
-              <TextField
-                id="email"
-                label={t('contact.email')}
-                variant="outlined"
-                InputLabelProps={{
-                  classes: {
-                    root: classes.cssLabel,
-                    focused: classes.cssFocused,
-                  },
-                }}
-                InputProps={{
-                  classes: {
-                    root: classes.cssOutlinedInput,
-                    focused: classes.cssFocused,
-                    notchedOutline: classes.notchedOutline,
-                  },
-                }}
-              />
-            </div>
-            <div>
-              <TextField
-                id="message"
-                label={t('contact.message')}
-                multiline
-                rows={7}
-                variant="outlined"
-                InputLabelProps={{
-                  classes: {
-                    root: classes.cssLabel,
-                    focused: classes.cssFocused,
-                  },
-                }}
-                InputProps={{
-                  classes: {
-                    root: classes.cssOutlinedInput,
-                    focused: classes.cssFocused,
-                    notchedOutline: classes.notchedOutline,
-                  },
-                }}
-              />
-            </div>
-            <div>
-              <Button
-                variant="outlined"
-                classes={{ root: classes.button, outlined: classes.notchedOutline }}
-              >
-                Send
-              </Button>
-            </div>
-          </form>
+          <Formik
+            initialValues={{ name: '', email: '', message: '' }}
+            validate={(values) => {
+              const errors = {};
+              if (!values.email) {
+                errors.email = 'Required';
+              } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+                errors.email = 'Invalid email address';
+              }
+              return errors;
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+              axios
+                .post('https://getform.io/f/4f7fcb89-ff8f-4c12-8ef9-1524ca5102c7', values, {
+                  headers: { Accept: 'application/json' },
+                })
+                .then((response) => {
+                  setSubmitting(false);
+                  // console.log(response);
+                })
+                .catch((error) => {
+                  // console.log(error);
+                });
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
+                <div>
+                  <TextField
+                    id="name"
+                    name="name"
+                    label={t('contact.name')}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.name}
+                    variant="outlined"
+                    classes={classes.textfield}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                    }}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    id="email"
+                    name="email"
+                    label={t('contact.email')}
+                    variant="outlined"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                    }}
+                  />
+                  {errors.email && touched.email && errors.email}
+                </div>
+                <div>
+                  <TextField
+                    id="message"
+                    name="message"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.message}
+                    label={t('contact.message')}
+                    multiline
+                    rows={7}
+                    variant="outlined"
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                    }}
+                  />
+                </div>
+                <div>
+                  <Button
+                    variant="outlined"
+                    classes={{ root: classes.button, outlined: classes.notchedOutline }}
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    Send
+                  </Button>
+                </div>
+              </form>
+            )}
+          </Formik>
         </div>
 
         <div>
