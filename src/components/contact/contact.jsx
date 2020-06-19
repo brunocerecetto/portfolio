@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   cssOutlinedInput: {
+    color: 'white',
     '&$cssFocused $notchedOutline': {
       borderColor: '#d5174e !important',
     },
