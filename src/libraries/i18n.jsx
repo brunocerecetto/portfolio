@@ -30,6 +30,10 @@ i18n.use(initReactI18next).init({
           email: 'Email',
           message: 'Message',
           findMe: 'You can also find me at:',
+          snack: {
+            success: 'Your message was sent successfully',
+            error: 'An error occurred, please try again later',
+          },
         },
         footer: {
           viewThisSite: 'View this site in',
@@ -62,6 +66,10 @@ i18n.use(initReactI18next).init({
           email: 'Email',
           message: 'Mensaje',
           findMe: 'También me podes encontrar en:',
+          snack: {
+            success: 'Su mensaje fue enviado exitosamente',
+            error: 'Ocurrio un error, por favor intenter mas tarde',
+          },
         },
         footer: {
           viewThisSite: 'Ver este sitio en',

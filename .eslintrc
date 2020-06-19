@@ -22,7 +22,8 @@
     "jsx-a11y/accessible-emoji": "off",
     "react/jsx-props-no-spreading": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "react/forbid-prop-types": "off"
+    "react/forbid-prop-types": "off",
+    "arrow-parens": "off"
   },
   "plugins": ["react", "jsx-a11y", "import"]
 }
