@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { makeStyles } from '@material-ui/core/styles';
+import { Formik } from 'formik';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Formik } from 'formik';
-import axios from 'axios';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import Title from '../title';
 
@@ -50,8 +52,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 const Contact = ({ t }) => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const [snack, setSnack] = React.useState({
+    message: t('contact.snack.success'),
+    severity: 'success',
+  });
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-gray-800">
       <Title text={t('navbar.contact')} fontColor="white" />
@@ -72,17 +91,27 @@ const Contact = ({ t }) => {
               }
               return errors;
             }}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(values, { setSubmitting, resetForm }) => {
               axios
                 .post('https://getform.io/f/4f7fcb89-ff8f-4c12-8ef9-1524ca5102c7', values, {
                   headers: { Accept: 'application/json' },
                 })
                 .then((response) => {
-                  setSubmitting(false);
-                  // console.log(response);
+                  resetForm({ name: '', email: '', message: '' });
+                  setSnack({
+                    message: t('contact.snack.success'),
+                    severity: 'success',
+                  });
                 })
                 .catch((error) => {
-                  // console.log(error);
+                  setSnack({
+                    message: t('contact.snack.error'),
+                    severity: 'error',
+                  });
+                })
+                .finally(() => {
+                  setSubmitting(false);
+                  setOpen(true);
                 });
             }}
           >
@@ -243,6 +272,20 @@ const Contact = ({ t }) => {
           </ul>
         </div>
       </div>
+
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity={snack.severity}>
+          {snack.message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
