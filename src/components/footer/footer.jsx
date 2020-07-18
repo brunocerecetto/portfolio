@@ -31,7 +31,7 @@ const Footer = ({ t }) => {
     <footer className="w-full min-h-48 bg-background text-white leading-tight py-2">
       <div className="h-full flex flex-col justify-between">
         <div className="w-full flex flex-col md:flex-row items-center pb-4">
-          <div className="ml-4 w-full md:w-1/3 flex justify-center md:justify-start items-center text-xs mb-4 md:mb-0">
+          <div className="pl-4 w-full md:w-1/3 flex justify-center md:justify-start items-center text-xs mb-4 md:mb-0">
             <span className="mr-2s">{t('footer.viewThisSite')}</span>
             <Select
               id="select-outlined"
