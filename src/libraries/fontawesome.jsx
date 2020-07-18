@@ -1,5 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faLink, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 import {
   faLinkedin,
@@ -14,7 +14,9 @@ import {
 
 library.add(
   // solid
+  faBuilding,
   faChevronDown,
+  faLink,
   // brands
   faLinkedin,
   faTwitter,
