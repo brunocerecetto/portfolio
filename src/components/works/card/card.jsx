@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Card = ({ work }) => (
-  <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+  <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-8">
     <img className="w-full" src={work.img} alt={work.name} />
     <div className="px-6 py-4">
       <div className="font-bold text-highlight text-xl mb-2">{work.name}</div>
@@ -33,8 +33,8 @@ const Card = ({ work }) => (
     <div className={`px-6 py-4 flex ${work.languages.length > 1 ? 'justify-evenly' : 'justify-center'}`}>
       {
         work.languages.map(language => (
-          <div>
-            <span key={language} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">{language}</span>
+          <div key={language}>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">{language}</span>
           </div>
         ))
       }
