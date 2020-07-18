@@ -71,7 +71,7 @@ const AboutMe = ({ t }) => {
         </div>
         <div className="flex flex-col items-center mt-5 lg:mt-0">
           <h2 className="text-2xl font-black mb-5">{t('about.technologies')}</h2>
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-row justify-evenly">
             {badges.map(b => (
               <Badge key={b.text} text={b.text} icon={b.icon} />
             ))}

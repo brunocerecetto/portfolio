@@ -37,11 +37,11 @@ const wokrsImages = [
 ];
 
 const Works = ({ t }) => (
-  <div className="min-h-screen bg-gray-200">
+  <div className="bg-gray-200">
     <Title text={t('navbar.works')} fontColor="black" />
-    <div className="flex justify-around flex-wrap">
+    <div className="flex justify-around flex-wrap pb-16">
       {wokrsImages.map(work => (
-        <div key={work.name} className="w-full flex md:w-1/2 justify-center">
+        <div key={work.name}>
           <Card work={work} key={work.name} />
         </div>
       ))}
