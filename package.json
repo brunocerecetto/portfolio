@@ -24,14 +24,14 @@
     "react-dom": "^16.14.0",
     "react-gtm-module": "^2.0.10",
     "react-i18next": "^11.5.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^4.0.0",
     "react-particles-js": "^3.3.0",
     "react-scroll": "^1.8.0",
     "react-spring": "^8.0.27",
     "react-sticky": "^6.0.3",
     "react-text-loop": "^2.3.0",
     "react-visibility-sensor": "^5.1.1",
-    "snyk": "^1.345.1"
+    "snyk": "^1.437.3"
   },
   "scripts": {
     "start": "npm-run-all --parallel watch:css start:react",
